@@ -10,14 +10,16 @@ public class AppLockedMe {
 		FileUtil util = new FileUtil();
 		int ch;
 		System.out.println("\n Project Name : LockedMe.com");
-		System.out.println("\n Developer Name : Shehla Kulsum Khan Baig \n");
+		System.out.println(" Developer Name : Shehla Kulsum Khan Baig \n");
 		Scanner sc = new Scanner(System.in);
 		
 		do {
+			    System.out.println("\n Welcome to LockedMe.com ");
+				System.out.println(" Enter your choice: ");
 				System.out.println("\n1.  Display Files in Directory");
-				System.out.println("2.  Perform Add,Delete, Search operations on files");
+				System.out.println("2.  Perform Add, Delete, Search operations on files");
 				System.out.println("3.  Exit App");
-				System.out.println("\n Enter the choice");
+
 				ch = sc.nextInt();
 				
 				if (ch>3 && ch<0) {
@@ -26,13 +28,17 @@ public class AppLockedMe {
 				else {
 						switch (ch) {
 						case 1:
+							System.out.println("---------------------------------------");
+							System.out.println("Sorting by filename in ascending order");
+							System.out.println("---------------------------------------");
 							List<MyFile> files = util.getFiles();
 							for (MyFile f : files)
 								System.out.println(f.getId() + "\t" + f.getFileName());
 							break;						
 						case 2:								
 								FileInterface fi= new FileInterface();
-								fi.fileOperation();
+								fi.fileOperation(); 
+								break;						
 						case 3:
 							System.out.println("You choose to exit, Thanks!");
 							break;
