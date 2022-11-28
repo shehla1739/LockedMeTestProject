@@ -30,22 +30,19 @@ public FileUtil() {
 	}
 } 
 
-//get file
+//List files in Ascending order
 public List<MyFile> getFiles() throws IOException{
 	files.clear();
 	count=0;
-	File f = new File("E://java");
-	//String[] fs=f.list();
-	List<String> fs = Arrays.asList(f.list());
-	Collections.sort(fs);
-	for(String file:fs)
-	{
-		count++;
-		files.add(new MyFile(count,file));
-	}
-	return files;
-	
-	
+			File f = new File("E://java");
+			List<String> fs = Arrays.asList(f.list());
+			Collections.sort(fs);
+			for(String file:fs)
+			{
+				count++;
+				files.add(new MyFile(count,file));
+			}
+			return files;		
 }
 
 //add file
