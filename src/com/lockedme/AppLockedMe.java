@@ -10,18 +10,19 @@ public class AppLockedMe {
 	public static void main(String[] args) throws IOException {
 		FileUtil util = new FileUtil();
 		int ch;
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
 		System.out.println("\n Project Name : LockedMe.com");
 		System.out.println(" Developer Name : Shehla Kulsum Khan Baig \n");
+		System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ \n");
+		 System.out.println("\n Welcome to LockedMe.com \n ");
 	 	Scanner sc = new Scanner(System.in);
 	 	try {
-			do {
-				    System.out.println("\n Welcome to LockedMe.com ");
-					System.out.println(" Enter your choice: ");
+			do {				   
+					System.out.println(" \n Enter your choice: ");
 					System.out.println("\n1.  Display Files in Directory");
 					System.out.println("2.  Perform Add, Delete, Search operations on files");
 					System.out.println("3.  Exit App");
 					ch = sc.nextInt();
-					System.out.println("ch : " + ch);		
 						if (ch<0 && ch>3) {							
 								System.out.println("Invalid Choice, Please try again");				   
 						} 
@@ -29,7 +30,7 @@ public class AppLockedMe {
 								switch (ch) {
 								case 1:
 									System.out.println("---------------------------------------");
-									System.out.println("Sorting by filename in ascending order");
+									System.out.println("Files listed in ascending order: ");
 									System.out.println("---------------------------------------");
 									List<MyFile> files = util.getFiles();
 									for (MyFile f : files)
@@ -54,6 +55,8 @@ public class AppLockedMe {
 		}
 		catch (InputMismatchException e){
 	          System.out.print("Your selection can only be an integer between 1 to 3!");
+	     }finally {
+	    	 sc.close();
 	     }
 	   }  //main
 	}//class
